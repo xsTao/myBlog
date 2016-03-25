@@ -1,0 +1,9 @@
+<%- include header %>
+
+<% posts.forEach(function(tag,index){ %>
+	<% if(tag){ %>
+	<a href="/tags/<%- encodeURIComponent(tag) %>" class="tag"><%= tag %></a>
+	<% } %>
+<% }) %>
+
+<%- include footer %>

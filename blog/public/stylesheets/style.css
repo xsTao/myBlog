@@ -1,0 +1,433 @@
+/* inspired by http://yihui.name/cn/ */
+*
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+	padding-top: 40px;
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+
+    width: 100%;
+    margin: 2em auto !important;
+
+    background: #F6F5F0 !important;
+}
+/*p
+{
+    line-height: 24px;
+
+    margin: 1em 0;
+}*/
+pre {
+	border:none !important;
+    background-color: #F2F2F2 !important;
+}
+input,
+textarea
+{
+    padding: 4px;
+}
+#regform .error{
+    color:red;
+}
+
+a,
+a:focus,
+a:active
+{
+	cursor: pointer;
+    text-decoration: none;
+    outline:none !important;
+    -moz-outline:none;
+    border:none!important;
+}
+nav {
+	padding-left: 10%;
+}
+nav .username {
+	display: inline-block;
+	font-size: 16px;
+	margin:0 5px;
+	color: #fff;
+}
+header
+{
+    padding: 10px 10%;
+}
+header h3{
+    font-weight: bold;
+}
+/*nav
+{
+    font-family: 'Microsoft YaHei';
+    font-size: 1.1em;
+
+    position: fixed;
+    left: 12em;
+
+    width: 9em;
+
+    text-align: right;
+    text-transform: uppercase;
+}
+nav li
+{
+    list-style-type: none;
+}
+nav a
+{
+    display: block;
+
+    padding: .7em 1em;
+
+    text-decoration: none;
+
+    color: #000;
+}
+nav a:hover
+{
+    -webkit-transition: color .5s linear;
+
+    color: #f9f9f9;
+    background-color: #f00;
+}*/
+article
+{
+    font-size: 16px;
+
+    padding-top: .5em;
+}
+article a
+{
+    text-decoration: none;
+
+    color: #d00;
+}
+article a:hover
+{
+    text-decoration: underline;
+
+    color: #333;
+}
+/*article div.success
+{
+    color: #0f0;
+}
+article div.error
+{
+    color: #ff4040;
+}*/
+
+.blog-form div input
+{
+    margin: 5px;
+}
+.blog-form div label
+{
+    display: inline-block;
+
+    width: 180px;
+
+    text-align: right;
+}
+.blog-form .commentarea,
+.blog-form #content
+{
+    margin-left: 10%;
+}
+.blog-form .btn-loginin,
+.blog-form .btn-post,
+.blog-form .btn-regist,
+.blog-form .btn-upload,
+.blog-form .btn-comment
+{
+    font: 14px bold;
+
+    width: 70px;
+    margin: 10px 15%;
+    padding: 5px;
+
+    color: #f9f9f9;
+    /*border-radius: 6px;*/
+    /*background: #a048ef;*/
+}
+
+p.info a
+{
+	font-size: 14px;
+	margin:2px;
+    color: #FC8DA3;
+}
+
+.edit
+{
+    font-size: 13px;
+
+    margin: 3px;
+    padding: 2px 5px;
+
+    color: #333;
+    border-radius: 3px;
+    background-color: #7399E8;
+}
+.edit:hover
+{
+    -webkit-transition: color .2s linear;
+    text-decoration: none;
+
+    color: #fff;
+    background-color: #f00;
+}
+.post .content {
+    /*border: 1px solid #ddd;*/
+    padding: 5px;
+}
+.comments
+{
+    margin: 20px 0px;
+    padding: 0 10px;
+    border-top: 1px solid #ccc;
+}
+.comments .content
+{
+    margin: 0;
+    padding:5px;
+}
+.comment h3
+{
+    margin: 10px 0;
+}
+
+.comments .comment{
+	padding:10px 0px;
+	/*margin: 5px 0;*/
+}
+.comments .comment img {
+	margin-right: 5px;
+}
+.comments .comment .add-reply {
+	display: none;
+}
+.comments .comment-reply{
+	padding:5px;
+	background-color: #F2F2F2;
+	margin:5px 0 5px 5%;
+	border-left:5px solid #D7E5CE;
+}
+/*.comments .comment-reply pre{
+	background-color: ##F2F2F2 !important;
+}*/
+.comments .comment-head {
+	margin-top: 15px;
+	padding: 10px;
+    background-color:  #F2F2F2;
+	/*border: 1px solid #E6DEDE;*/
+}
+.comments .comment-hide {
+    border: 1px dashed #F97F7F !important;
+}
+.comments .hide-reason {
+    display: none;
+    margin:5px;
+}
+.comments .required,
+.blog-form .required {
+    display: inline-block;
+    height: 25px;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold; 
+    color: red;
+}
+.comments .write-comment {
+    border-top: 1px solid #ccc;
+    margin-top: 50px;
+}
+.posts {
+    /*background: #F1F6F7;*/
+    margin:10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.post .content .postcontent
+{
+    margin: 15px 5px;
+    min-height: 300px;
+}
+.blog .postcontent {
+    margin: 25px 5px;;
+}
+.prepage a,
+.page a,
+.nextpage a
+{
+    font-weight: bold;
+
+    float: left;
+
+    margin: 2px;
+    padding: .5em 1em;
+
+    text-decoration: none;
+
+    color: #f00;
+    border: 1px solid;
+}
+
+
+.prepage a:hover,
+.nextpage a:hover,
+.page a:hover
+{
+    -webkit-transition: color .2s linear;
+    text-decoration: none;
+    color: #f9f9f9;
+    background-color: #FC7D7D;
+}
+.currentpage
+{
+    font-weight: bold;
+
+    float: left;
+
+    margin: 2px;
+    padding: .5em 1em;
+
+    text-decoration: none;
+
+    color: #959292;
+    border: 1px solid;
+}
+.pagination
+{
+    margin: 20px 0;
+}
+footer
+{
+    height: 100px;
+}
+.archive
+{
+    line-height: 28px;
+
+    list-style: none;
+}
+.archive h3
+{
+    margin: .5em 0;
+}
+.archive time
+{
+    font-size: 14px;
+
+    float: left;
+
+    margin-right: 2em;
+
+    color: #999;
+}
+.archive > li {
+    margin: 5px;
+}
+/*.archive a {
+    display: block;
+}
+.archive li:hover,
+.archive a:hover{
+    background-color: #6CA0DC;
+    color:#eee;
+    text-decoration: none;
+}*/
+.tag
+{
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 0 2px;
+    border-radius: 2px;
+    /*background-color: #fff;*/
+}
+.tag:hover
+{
+    -webkit-transition: color .2s linear;
+    text-decoration: none;
+
+    color: #000;
+    background-color: #83A9F9;
+}
+.search
+{
+    font-size: 1em;
+
+    width: 6em;
+    margin: .5em 0;
+
+    text-align: center;
+
+    border: 0;
+}
+.search-content {
+    display: none;
+    margin-left: 12% ;
+}
+.l_head{float:left;margin-left:0;box-shadow:0px 1px 4px #888;}
+.r_head{float:right;padding:2px;background-color: #EFEDED; color:#999;}
+a.r_head:hover {
+	background-color: #FF5555;
+	text-decoration: none;
+	color:#FFF;
+}
+form .passwd .password,
+form .username .name {
+	width:80%;
+    color:#000;
+}
+ form .login {
+ 	margin: 10px 5px;
+ 	padding:5px;
+ }
+ form .login div {
+ 	margin:5px;
+ }
+form .login .btn-login{
+	margin-left:30%;
+}
+.hotblog a {
+	display: block;
+	padding: 5px;
+}
+
+.hotblog  a:hover{
+	background: #6CA0DC;
+	text-decoration: none;
+	color:#fff;	
+}
+
+.ke-container{
+    margin:5px 10% !important;
+    width:70% !important;
+}
+
+/*.edui-default #ueditor_0 .view {
+    height:300px;
+}*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1458542963_9679792.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1458542963_9679792.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1458542963_9679792.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1458542963_9679792.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1458542963_9679792.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+                    
+                                                                               	
+.iconfont {
+	font-family:"iconfont";
+	font-size:16px;
+	color:#7EEA6B;
+	font-style:normal;
+}                 
+
+  

@@ -1,0 +1,10 @@
+		</div>
+	</div>
+	<footer></footer>
+	<script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript"  src="/Kindeditor/kindeditor-all-min.js"></script>
+	<script type="text/javascript"  src="/Kindeditor/lang/zh_CN.js"></script>
+	<script type="text/javascript" src="/javascripts/blog.js"></script>
+</body>
+</html>

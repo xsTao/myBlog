@@ -1,0 +1,13 @@
+<div class="hotblog">
+	<h3>阅读排行</h3>
+	<ul class="list-unstyled">
+		<% docs.forEach(function(doc){ %>
+			<a href="/p/<%= doc._id %>" title="<%- doc.title %>"><li class="title">
+			<% if(doc.title.length >10){ %> 
+				<%- doc.title.substring(0,18) %>...
+			<% }else{ %> 
+				<%- doc.title %>
+			<% } %><span class="badge pull-right"><%= doc.pv+1 %></span></li></a>
+			<% }) %>
+	</ul>
+</div>

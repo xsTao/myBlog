@@ -1,0 +1,33 @@
+
+<%- include header %>
+<form action="#" method="post" class="blog-form">
+	<div>
+		<label for="title">标题:</label>
+		<input type="text" name="title" id="title" value="" tabindex="1" required/> <span class="required">*</span>
+	</div>
+	<div>
+		<label>分类:</label>
+		<input type="text" name="category1" tabindex="2"required ><span class="required">*</span>
+		<input type="text" name="category2" tabindex="2">
+	</div>
+	<div>
+		<label for="tag1">标签:</label>
+		<input type="text" name="tag1" tabindex="2" required><span class="required">*</span>
+		<input type="text" name="tag2" tabindex="2">
+		<input type="text" name="tag3" tabindex="2">
+	</div>
+	<div class="clearfix">
+		<label for="content" class="contentlable">正文:</label><br/>
+		<textarea rows="10" cols="80" name="content" id="kindeditor" placeholder="" tabindex="2"></textarea>
+	</div>
+	
+	<input type="submit" value="Submit" class="btn-post btn btn-primary" tabindex="3"/>
+	
+
+</form>
+
+
+
+
+
+<%- include footer %>

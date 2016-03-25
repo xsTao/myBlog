@@ -1,0 +1,54 @@
+<%- include header %>
+
+<ul class="archive col-md-8 col-xs-12 col-md-offset-1">
+	<% var lastYear = 0 %>
+	<% if(posts.length != 0){ %> 
+		<% posts.forEach(function (post, index) { %>
+			<% if(lastYear != post.time.year) { %>
+				<li><h3><%= post.time.year %></h3></li>
+			<% lastYear = post.time.year } %>
+			<li><time><%= post.time.day %></time></li>
+			<li>
+				<a class="search-title" href="/p/<%= post._id %>"><%= post.title %><span>(评论<%= post.comments.length %>)</span></a>
+				<div class="search-content">
+					<% if(post.content.length >200){ %>
+						<%- post.content.substring(0,200) %>......
+					<% }else{ %>
+						<%- post.content %>
+					<% } %>
+				</div>
+			</li>
+		<% }) %>
+	<% }else{ %>
+			<div class="well well-lg">没有找到您搜索的文章，请尝试换个关键字或者<a href="/">返回首页</a>瞅一瞅</div>
+	<% } %>
+
+	<div class="pagination">
+		<% if(totalpage > 1){ %>
+			<% if(!isFirstPage) { %> 
+				<span class="prepage"><a href="?keyword=<%= query%>&p=<%= page-1 %>" title="上一页">上一页</a></span>		
+			<% } %>
+			<% if(page >= 1 && page <= totalpage){ %> 
+				<% for(var i=1; i<= totalpage ;i++) { %> 
+					<% if(page == i){ %>
+						<span class="currentpage"><%= i %></span>
+					<% }else{ %> 
+						<span class="page"><a href="?keyword=<%= query%>&p=<%= i %>"><%= i %></a></span>
+					<% } %>
+				<% } %>
+			<% } %>
+			<% if(page != totalpage) {　%> 
+				<span class="nextpage"><a href="?keyword=<%= query%>&p=<%= page+1 %>" title="下一页">下一页</a></span>
+			<% } %>
+		<% } %>
+	</div>
+</ul>
+<div class="col-md-3 col-xs-10">
+	<div class=" col-xs-12">
+		<%- include category %>
+	</div>
+	<div class="col-xs-12">
+		<%- include hotblog %>
+	</div>
+</div>
+<%- include footer %>

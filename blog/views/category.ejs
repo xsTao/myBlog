@@ -1,0 +1,20 @@
+<div class="categories">
+	<div class="list-group">
+		<h3>文章分类</h3>
+		<% for(var i=0,j=0;i<category.length;i++,j++){ %>
+			<% if(category[i]){ %>				
+				<a href="/categories/<%- encodeURIComponent(category[i]) %>" class="list-group-item list-group-item-info"><%= category[i] %>				
+				<% var count =0 %>
+				<% categories.forEach(function(cats){ %>
+					<% cats.categories.forEach(function(cat){ %>
+						<% if(cat.category == category[i]){ %> 
+							<% count +=1; %>
+						<% } %>	
+					<% }) %>				
+				<% }) %>
+				<span class="badge"><%= count %></span>
+				</a>
+			<% } %>
+		<% } %>
+	</div>
+</div>

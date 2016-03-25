@@ -1,0 +1,40 @@
+<%- include header %>
+
+<ul class="archive col-md-8 col-md-offset-1 col-xs-12">
+	<% var lastYear = 0 %>
+	<% posts.forEach(function(post,index){ %>
+		<% if(lastYear != post.time.year){ %>
+			<li>
+				<h3><%= post.time.year %></h3>
+			</li>
+			<% lastYear = post.time.year %>
+		<% } %>
+		<li>
+			<time><%= post.time.day %></time>
+		</li>
+		<li>
+			<a class="search-title" href="/p/<%= post._id %>" title="<%= post.title %>"><%- post.title %><span>(阅读<%= post.pv+1 %>)</span></a>
+			<div class="search-content">
+				<% if(post.content.length >200){ %> 
+					<%- post.content.substring(0,200) %> ......
+				<% }else{ %> 
+					<%- post.content%>
+				<% } %>
+			 </div>
+		</li>
+	<% }) %>
+	<% if(posts.length > 10){ %>
+		<a href="/blog" class="morepost pull-right">更多文章>></a>
+	<% } %>
+</ul>
+
+<div class="col-md-3 col-xs-10">
+	<div class=" col-xs-12">
+		<%- include category %>
+	</div>
+	<div class="col-xs-12">
+		<%- include hotblog %>
+	</div>
+</div>
+
+<%- include footer %>

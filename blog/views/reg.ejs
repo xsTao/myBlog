@@ -1,0 +1,23 @@
+<%- include header %>
+<form action="#" method="post" class="blog-form" id="regform">
+	<div>
+		<label for="name">用 户 名:</label>
+		<input type="text" name="name" id="name" value="" tabindex="1"  required />
+	</div>
+	<div>
+		<label for="password">密&nbsp;&nbsp;&nbsp;码:</label>
+		<input type="password" name="password" id="password" value="" tabindex="2" required/>
+	</div>
+	<div>
+		<label for="passwdconf">密码确认:</label>
+		<input type="password" name="passwdconf" id="passwdconf" value="" tabindex="3" required/><span class="required"></span>
+	</div>
+	<div>
+		<label for="email">邮&nbsp;&nbsp;&nbsp;箱:</label>
+		<input type="email" name="email" id="email" value="" tabindex="4" required/>
+	</div>
+	<div>
+		<input type="submit" value="注册" class="btn-regist btn btn-primary" tabindex="5" />
+	</div>
+</form>
+<%- include footer %>

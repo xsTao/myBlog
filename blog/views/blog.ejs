@@ -1,0 +1,46 @@
+<%- include header %>
+	<div class="blog col-xs-12 col-md-offset-1 col-md-8">
+		<% posts.forEach(function(post,index){ %>
+			<div class="posts">
+				<p class="clearfix"><h3 class="posttitle"><a href="/p/<%= post._id%>"><%= post.title %></a></h3></p>
+				<!-- <a href="/u/<%= post.name %>"><img src="<%= post.head %>" class="l_head" /></a> -->
+				<p class="info">
+					<% if (post.reprint_info && post.reprint_info.reprint_from) { %>
+						<a href="/p/<%= post.reprint_info.reprint_from._id %>">原文链接</a> | 
+					<% } %>
+					作者：<a href="/u/<%= decodeURIComponent(post.name) %>"><%= post.name %></a>|                                             
+					日期：<%= post.time.minute %> |
+					标签：
+					<% if(post.tags){ %> 
+						<% post.tags.forEach(function(tag,index){ %>
+							<% if(tag.tag){ %>
+								<a class="tag" href="/tags/<%= encodeURIComponent(tag.tag) %>"><%= tag.tag %></a>
+							<% } %>
+						<% }) %>
+					<% } %>
+					<p class="info">
+						阅读：<%= post.pv %> |
+						评论：<%= post.comments.length %> |						
+					</p>
+				</p>
+				<div class="postcontent">
+				<% if(post.content.length >200){ %>
+					<%- post.content.substring(0,200) %>......
+					<a href="/p/<%= post._id%>">查看更多内容>></a>
+				<% }else{ %>
+					<%- post.content %>
+				<% } %>
+				</div>
+			</div>
+		<% }) %>
+		<%- include paging %>
+	</div>
+<div class="col-md-3 col-xs-10">
+	<div class=" col-xs-12">
+		<%- include category %>
+	</div>
+	<div class="col-xs-12">
+		<%- include hotblog %>
+	</div>
+</div>
+<%- include footer %>

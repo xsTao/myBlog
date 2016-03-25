@@ -1,0 +1,27 @@
+<%- include header%>
+<form method="post" class="blog-form">
+	<div>
+		<label for="title">标题：</label>
+		<input type="text" name="title" id="title" value="<%= post.title %>"  tabindex="1" required /><span class="required">*</span>
+	</div>
+	<div>
+		<label for="category">分类：</label>
+		<input type="text" name="category1" value="<%= post.categories[0].category %>" tabindex="2" required /> <span class="required">*</span>
+		<input type="text" name="category2" value="<%= post.categories[1].category %>" tabindex="2">
+	</div>
+	<div>
+		<label for="tag">标签：</label>
+		<input type="text" name="tag1" value="<%= post.tags[0].tag %>" tabindex="3" required /><span class="required">*</span>
+		<input type="text" name="tag2" value="<%= post.tags[1].tag %>" tabindex="3">
+		<input type="text" name="tag3" value="<%= post.tags[2].tag %>" tabindex="3">
+	</div>
+	<div>
+		<label for="content" class="contentlable">正文：</label><br>
+		<textarea rows="10" cols="80" name="content" class="content" id="kindeditor" tabindex="3"><%- post.content %></textarea>
+	</div>
+	
+	<input type="submit" value="保存修改" class="btn-post btn btn-primary" tabindex="3"/>
+	
+</form>
+
+<%-  include footer%>

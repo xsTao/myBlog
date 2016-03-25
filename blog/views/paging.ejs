@@ -1,0 +1,19 @@
+<div class="pagination">
+	<% if(totalpage > 1){ %>
+		<% if(!isFirstPage) { %> 
+			<span class="prepage"><a href="?p=<%= page-1 %>" title="上一页">上一页</a></span>		
+		<% } %>
+		<% if(page >= 1 && page <= totalpage){ %> 
+			<% for(var i=1; i<= totalpage ;i++) { %> 
+				<% if(page == i){ %>
+					<span class="currentpage"><%= i %></span>
+				<% }else{ %> 
+					<span class="page"><a href="?p=<%= i %>"><%= i %></a></span>
+				<% } %>
+			<% } %>
+		<% } %>
+		<% if(page != totalpage) {　%> 
+			<span class="nextpage"><a href="?p=<%= page+1 %>" title="下一页">下一页</a></span>
+		<% } %>
+	<% } %>
+</div>

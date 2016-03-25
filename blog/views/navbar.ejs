@@ -1,0 +1,63 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">杨小涛de博客</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav nav-pills">
+        <li class="<%= (url == '/' ? 'active' :'') %>" role='presentation'><a href="/">首页 <span class="sr-only">(current)</span></a></li>
+        <li class="<%= (url.search('/blog') >-1 || url.search('/p/') > -1 || url.search('/u/') > -1) ? 'active' :'' %>"  role="presentation"><a href="/blog" >博客</a><li>
+        <li role="presentation"><a href="/collecting"	>收藏</a><li>
+        <li role="presentation"><a href="/learning" >学习&研究</a><li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search" action="/search" method="get">
+        <div class="form-group">
+          <input type="text" class="form-control" name="keyword" placeholder="SEARCH">
+        </div>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li><a href="#">Link</a></li> -->
+        <% if(user){ %>
+        	<li><a href="/post"><span class="iconfont">&#xe607; 发表文章</span></a></li>
+			<li class="dropdown">
+			 	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expended="false"><span class="iconfont">&#xe603;</span><span class="username"><%= user.name %> <span class="badge"></span></span><span class="caret"></span></a>
+			 	<ul class="dropdown-menu">
+	 				<li class="info"><a href="#"><span class="iconfont">&#xe602;</span> 个人资料</a></li>
+	 				<li class="message"><a href="#"><span class="iconfont">&#xe605;</span> 消息管理 <span class="badge"></span></a></li>
+	 				<li class="blog"><a href="#"><span class="iconfont">&#xe606;</span> 管理博客</a></li>
+	 				<li class="set"><a href="#"><span class="iconfont">&#xe600;</span> 设置</a></li>
+			 	</ul>
+			</li>
+			<li><a href="/logout"><span class="iconfont">&#xe604;</span></a></li>
+        <% }else{ %>
+        	<form class="dropdown  navbar-form " method="post" action="/login">
+	          <a href="#" class="dropdown-toggle btn btn-primary" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">登录 <span class="caret"></span></a>
+	          <div class="dropdown-menu login">
+	          	<div class="username">
+	          		<span class="iconfont">&#xe603;</span>
+					       <input type="text" name="name" class="name">
+	          	</div>
+	          	<div class="passwd">
+	          		<span class="iconfont">&#xe601;</span>
+					       <input type="password" name="password" class="password">
+	          	</div>
+	            <li role="separator" class="divider"></li>
+	            <input type="submit" class="btn btn-success btn-login" value="登录">
+	          </div>
+	        </form>
+        <% } %>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
