@@ -1,3 +1,3 @@
 ###READE ME NOW!
-**this is my personal blog! wecome to communaction with me~~**
+**this is my personal blog! wecome to communicate with me~~**
 
