@@ -8,6 +8,7 @@ var fs = require('fs');
 var User = require('../models/user.js');
 var Post = require('../models/post.js');
 var Comment = require('../models/comment.js');
+var trimHtml = require('trim-html');
 /* GET home page. */
 var uuid = require('node-uuid');
 
@@ -32,12 +33,17 @@ router.get('/', function(req, res) {
 						req.flash('error', err);
 						return res.redirect('/');
 					}
-					console.log(req.flash('error').toString())
+					var trimed =[];
+					posts.forEach(function(post,index){
+						 trimed[index]  = trimHtml(post.content,{limit:100});
+					});
+					//console.log(req.flash('error').toString())
 					res.render('index', {
 						title: '最近的文章',
 						posts: posts,
 						docs: docs,
 						category: category,
+						trimed:trimed,
 						categories: categories,
 						url: req.url,
 						success: req.flash('success').toString(),
@@ -53,16 +59,16 @@ router.get('/', function(req, res) {
 
 
 
-router.get('/reg', checkNotLogin);
-router.get('/reg', function(req, res) {
-	res.render('reg', {
-		title: '注册',
-		user: req.session.user,
-		url: req.url,
-		success: req.flash('success').toString(),
-		error: req.flash('error').toString()
-	});
-});
+//router.get('/reg', checkNotLogin);
+//router.get('/reg', function(req, res) {
+//	res.render('reg', {
+//		title: '注册',
+//		user: req.session.user,
+//		url: req.url,
+//		success: req.flash('success').toString(),
+//		error: req.flash('error').toString()
+//	});
+//});
 
 router.post('/reg', checkNotLogin);
 router.post('/reg', function(req, res) {
@@ -240,10 +246,15 @@ router.get('/blog', function(req, res) {
 					if (err) {
 						posts = [];
 					}
+					var trimed =[];
+					 posts.forEach(function(post,index){
+                                                 trimed[index]  = trimHtml(post.content,{limit:100});
+                                        });
 					res.render('blog', {
 						title: '我的博客',
 						posts: posts,
 						categories: categories,
+						trimed:trimed,
 						docs: docs,
 						category: category,
 						page: page,
@@ -304,6 +315,9 @@ router.get('/tags/:tag', function(req, res) {
 						user: req.session.user,
 						url: req.url,
 						posts: posts,
+						docs:docs,
+						category:category,
+						categories:categories,						
 						success: req.flash('success').toString(),
 						error: req.flash('error').toString()
 					});
@@ -334,7 +348,7 @@ router.get('/search', function(req, res) {
 				Post.search(req.query.keyword,page, function(err, posts,total) {
 					if (err) {
 						req.flash('error', err);
-						console.log(err);
+					//	console.log(err);
 						return res.redirect('/');
 					}
 					res.render('search', {
@@ -494,7 +508,7 @@ router.get('/removecomment/:_id', function(req, res) {
 	var post_id = req.params._id;
 	var comment_id = req.query.comment_id;
 	Post.removeComment(post_id, comment_id, function(err) {
-		console.log(err)
+	//	console.log(err)
 		if (err) {
 			req.flash('error', err);
 			return res.redirect('back');
@@ -536,11 +550,12 @@ router.get('/showcomment/:_id', function(req, res) {
 router.get('/edit/:_id', checkLogin);
 router.get('/edit/:_id', function(req, res) {
 	Post.edit(req.params._id, function(err, post) {
-		if (err) {
+		if (err) {			
 			req.flash('error', err);
 			res.redirect('back');
 		}
 		res.render('edit', {
+			
 			title: '编辑：' + post.title,
 			post: post,
 			url: req.url,
@@ -554,6 +569,8 @@ router.get('/edit/:_id', function(req, res) {
 router.post('/edit/:_id', checkLogin);
 router.post('/edit/:_id', function(req, res) {
 	var currentUser = req.session.user;
+	var title = req.body.title;
+	console.log(title);
 	var categories = [{
 		"category": req.body.category1
 	}, {
@@ -566,7 +583,7 @@ router.post('/edit/:_id', function(req, res) {
 	}, {
 		"tag": req.body.tag3
 	}];
-	var post = new Post(currentUser.name, currentUser.head, req.body.title, categories, tags, req.body.content);
+	var post = new Post(currentUser.name, currentUser.head, title, categories, tags, req.body.content);
 	Post.update(req.params._id, post, function(err) {
 		//var title = encodeURIComponent(req.params.title);
 		var url = "/p/" + req.params._id;
@@ -657,7 +674,7 @@ router.get("/categories/:fenlei",function(req,res){
 					req.flash('error', err);
 				}
 				Post.getCategoryPosts(fenlei,function(err,posts,total){
-					console.log(posts)
+				//	console.log(posts)
 					res.render('categories',{
 						title:"分类："+fenlei,
 						page: page,

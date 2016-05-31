@@ -183,12 +183,14 @@ Post.getOne = function(_id, callback) {
 
 //返回原始发表的内容
 Post.edit = function(_id, callback) {
+	console.log("sdgsar"+_id);
 	mongodb.open(function(err, db) {
 		if (err) {
 			return callback(err);
 		}
 		db.collection('posts', function(err, collection) {
 			if (err) {
+console.log(err);
 				mongodb.close();
 				return callback(err);
 			}
@@ -713,7 +715,7 @@ Post.getCategories = function(callback) {
 			}).toArray(function(err, docs) {
 				mongodb.close();
 				if (err) {
-					console.log(err)
+				//	console.log(err)
 					return callback(err);
 				}
 				return callback(null, docs);
@@ -768,7 +770,7 @@ Post.getCategoryPosts = function(fenlei, callback) {
 				}, {}).toArray(function(err, docs, total) {
 					mongodb.close();
 					if (err) {
-						console.log(err)
+					//	console.log(err)
 						return callback(err);
 					}
 					// docs.forEach(function(doc) {

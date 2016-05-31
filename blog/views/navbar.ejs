@@ -16,8 +16,8 @@
       <ul class="nav navbar-nav nav-pills">
         <li class="<%= (url == '/' ? 'active' :'') %>" role='presentation'><a href="/">首页 <span class="sr-only">(current)</span></a></li>
         <li class="<%= (url.search('/blog') >-1 || url.search('/p/') > -1 || url.search('/u/') > -1) ? 'active' :'' %>"  role="presentation"><a href="/blog" >博客</a><li>
-        <li role="presentation"><a href="/collecting"	>收藏</a><li>
-        <li role="presentation"><a href="/learning" >学习&研究</a><li>
+        <li class="<%= (url.search('/collecting') >-1 ) ? 'active' :'' %>"  role="presentation"><a href="/collecting"	>收藏</a><li>
+        <li class="<%=  (url.search('/learning') >-1 ) ? 'active' :'' %>" role="presentation"><a href="/learning" >学习&研究</a><li>
       </ul>
       <form class="navbar-form navbar-left" role="search" action="/search" method="get">
         <div class="form-group">

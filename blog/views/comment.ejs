@@ -6,7 +6,7 @@
 			<div class="comment-head">
 				<p>
 					<!--<img src="<%= comment.head %>" class="r_head" />-->
-					<span><u><%- comment.name %></u></span> 
+					<span><u><%= comment.name %></u></span> 
 					<span class="info"> 回复于 <%- comment.time %></span>
 				</p>
 				<% if(comment.hide && comment.hide == true){ %> 
@@ -82,13 +82,13 @@
 							<p class="hide-reason">该回复中可能含有广告、病毒链接等违法信息，或使用了敏感的、不文明的词汇，请文明用语，禁止广告！</p>			
 							</div>
 							
-							<% if(user && (user.name == 'root')){ %> 
+							<% if(user){ %> 
 								<a href="/removecomment/<%= post._id %>?comment_id=<%= comment2.comment_id %> " class="r_head">删除</a>
 								<a href="/showcomment/<%= post._id %>?comment_id=<%= comment2.comment_id %> " class="r_head">恢复</a>
 							<% } %>			
 						<% }else{ %> 
 							<pre class="content"><%- comment2.content %></pre>
-							<% if(user && (user.name == 'root')){ %>
+							<% if(user){ %>
 								<a href="/removecomment/<%= post._id %>?comment_id=<%= comment2.comment_id %> " class="r_head">删除</a> 
 								<a href="/hidecomment/<%= post._id %>?comment_id=<%= comment2.comment_id %> " class="r_head">隐藏</a>
 							<% } %>

@@ -125,6 +125,9 @@ article div.error
 {
     margin: 5px;
 }
+.blog-form .post-title {
+    width:390px;
+}
 .blog-form div label
 {
     display: inline-block;
@@ -257,7 +260,8 @@ p.info a
     min-height: 300px;
 }
 .blog .postcontent {
-    margin: 25px 5px;;
+    margin: 25px 5px;
+    padding:5px 0;
 }
 .prepage a,
 .page a,

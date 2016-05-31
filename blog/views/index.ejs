@@ -1,6 +1,6 @@
 <%- include header %>
 
-<ul class="archive col-md-8 col-md-offset-1 col-xs-12">
+<ul class="archive col-md-7 col-md-offset-1 col-xs-12">
 	<% var lastYear = 0 %>
 	<% posts.forEach(function(post,index){ %>
 		<% if(lastYear != post.time.year){ %>
@@ -15,11 +15,7 @@
 		<li>
 			<a class="search-title" href="/p/<%= post._id %>" title="<%= post.title %>"><%- post.title %><span>(阅读<%= post.pv+1 %>)</span></a>
 			<div class="search-content">
-				<% if(post.content.length >200){ %> 
-					<%- post.content.substring(0,200) %> ......
-				<% }else{ %> 
-					<%- post.content%>
-				<% } %>
+				<%- trimed[index].html %>
 			 </div>
 		</li>
 	<% }) %>
