@@ -1,0 +1,80 @@
+<%- include ../header %>
+<div class="list-group col-xs-3 col-md-2">
+    <a href="/learning/jschart"  class="list-group-item active">js绘图学习</a>
+    <a href="/learning/angular"  class="list-group-item ">angular实例</a>
+</div>
+<div class="col-md-10 content">
+    <h2>【例1】官方demo</h2>
+    <div id="demo1" style="height:400px">
+    </div>            
+    <pre>
+        &lt;script src="/echarts/dist/echarts.min.js">&lt;/script>
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+    </pre>
+    <p class="well">
+        可以从上例看出，echarts使用非常简单，下面通过数据库异步加载数据:
+        数据库为mongodb，创建一个集合clothes用来存储数据，通过jquery的get方法从后台取得数据，再加载。
+    </p>
+    <h2>【例2】从数据库加载数据显示图表</h2>
+   
+    <div id="demo2" style="height:400px"></div>
+     <pre>
+        var myChart2 = echarts.init(document.getElementById('demo2'));
+        $.get('/learning/getClothes').done(function(data){
+            myChart2.setOption ({
+                title:{
+                    text:'从数据库中取数据显示图表--柱状图'
+                },
+                tooltip:{},
+                legend:{
+                    data:['销量']
+                },
+                xAxis:{
+                    data:data.categories
+                },
+                yAxis:{},
+                series:[{
+                    name:'销量',
+                    type:'bar',
+                    data:data.data
+                }]
+            });
+        });
+    </pre>
+    
+    <h2>【例3】pm2.5图例</h2>
+    <canvas id="demo3" style="height:800px"></canvas>
+</div>
+
+<script src="/echarts.min.js"></script>
+<script src="/jquery/dist/jquery.min.js"></script>
+<script src="/javascripts/drowbar.js"></script>
+<script src="/javascripts/pm25.js"></script>
+
+
+<%- include ../footer %>

@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "description": "myblog",
+  "main": "",
+  "authors": [
+    "xsTao <1360809120@qq.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "blog"
+  ],
+  "homepage": "https://github.com/xsTao/myBlog",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.4"
+  }
+}

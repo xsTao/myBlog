@@ -240,7 +240,7 @@ router.get('/blog', function(req, res) {
 				}
 				//判断是否是第一页， 并把请求的页数转换成 number 类型
 				var page = req.query.p ? parseInt(req.query.p) : 1;
-				//查询并返回第page页的十篇文章
+				//查询并返回第page页的六篇文章
 
 				Post.getSix(null, page, function(err, posts, total) {
 					if (err) {

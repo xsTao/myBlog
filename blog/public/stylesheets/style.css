@@ -435,3 +435,8 @@ form .login .btn-login{
 }                 
 
   
+/*learning page*/
+#learning .content {
+    min-height: 500px;
+    border:1px solid  #333;
+}
