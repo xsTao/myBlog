@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 0; 
+}
+.box {
+	position: relative;
+	float: left;
+}
+body {
+    padding-left: 60px;
+}
+.content {
+	padding: 15px;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 5px #ccc;
+	border-radius: 5px;
+}
+
+.content img {
+	width: 200px;
+}
+
+/*图标*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1448003012_4844198.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1448003012_4844198.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1448003012_4844198.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1448003012_4844198.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1448003012_4844198.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+                    
+                    
+                    
+.iconfont {
+	font-family:"iconfont";
+	font-size:26px;
+	font-style:normal;
+}
+
+.back-top {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	bottom: 80px;
+	right: 20px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid #ccc;
+    border-radius: 5px;
+	background: #d9d9d9;
+
+}
+.back-top:hover {
+	background: #aaa;
+}

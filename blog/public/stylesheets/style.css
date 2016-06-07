@@ -436,7 +436,30 @@ form .login .btn-login{
 
   
 /*learning page*/
-#learning .content {
-    min-height: 500px;
-    border:1px solid  #333;
+#learning {
+    background: #06a !important;
+}
+#learning header {
+    color:#ccc;
+}
+#projects {
+    height:400px;
+    width:650px; 
+    position:relative;
+    margin:10px auto;
+}
+#projects a {
+    text-decoration: none;
+    position:absolute;
+    top:0px;left:0px;
+    color:#fff;
+    font-weight:bold;
+    padding:3px 6px;
+}
+#projects a:hover{
+    border:1px solid #eee;
+    box-shadow: 1px 1px 0 0 #333;
+    font-size: large;
+    background:#000;
+    border-radius:5px;
 }

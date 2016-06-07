@@ -92,7 +92,7 @@ $(function() {
 
 		});
 	};
-	setInterval(messageAjax, 1000 * 60); //1分钟查询一次是否有新消息
+	//setInterval(messageAjax, 10000 * 60); //1分钟查询一次是否有新消息
 
 	$('.comments .show-reason').on('click',function(e){
 		e.preventDefault();

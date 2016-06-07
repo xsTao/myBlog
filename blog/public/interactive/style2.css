@@ -1,0 +1,185 @@
+.menu {
+	counter-reset: li;
+	width: 590px;
+	list-style: none;
+	margin: 50px auto;
+	padding: 15px;
+	background: #eee;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1) inset;
+	border-radius: 15px;
+	overflow: hidden;
+	z-index: 1;
+}
+.menu {
+    zoom: 1;
+}
+.menu  li{
+	cursor: pointer;
+	position: relative;
+	float: left;
+	width: 180px;
+	height: 140px;
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 10px 10px 0; 
+}
+.menu  li:nth-child(1),
+.menu  li:nth-child(1) .content ,
+.menu  li:nth-child(1) .close{
+	background: #2c618f;
+}
+.menu  li:nth-child(2),
+.menu  li:nth-child(2) .content, 
+.menu  li:nth-child(2) .close{
+	background: #91ab31;
+}
+.menu  li:nth-child(3),
+.menu  li:nth-child(3) .content, 
+.menu  li:nth-child(3) .close{
+	background: #714a28;
+}
+.menu  li:nth-child(4),
+.menu  li:nth-child(4) .content ,
+.menu  li:nth-child(4) .close{
+	background: #e58600;
+}
+.menu  li:nth-child(5),
+.menu  li:nth-child(5) .content, 
+.menu  li:nth-child(5) .close{
+	background: #c33a00;
+}
+.menu  li:nth-child(6),
+.menu  li:nth-child(6) .content, 
+.menu  li:nth-child(6) .close{
+	background: #7f5dac;
+}
+.menu  li:nth-child(7),
+.menu  li:nth-child(7) .content, 
+.menu  li:nth-child(7) .close{
+	background: #5672b7;
+}
+.menu  li:nth-child(8),
+.menu  li:nth-child(8) .content, 
+.menu  li:nth-child(8) .close{
+	background: #69003f;
+}
+.menu  li:nth-child(9),
+.menu  li:nth-child(9) .content, 
+.menu  li:nth-child(9) .close{
+	background: #393043;
+}
+.menu  li:nth-child(3n+3) {
+	margin-right: 0;
+}
+.menu  li:nth-child(n+7) {
+	margin-bottom: 0;
+}
+.menu  li .title {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font:italic bold 1em/120px 'trebuchet MS', Arial, helvetica;
+	/*font:bold  1em/120px 'MicroSoft YaHei';*/
+	color:#aaa;
+}
+.menu  li .content {
+	opacity: 0;
+	display: none;
+	position: absolute;
+  	height: 120px; 
+  	width: 200px; /*overflow: hidden;*/
+ 	transition: all .5s ease-out;
+    color:#fff;
+}
+.menu  li:hover .title {
+	color:#ddd;
+	transition:all .5s;
+}
+
+/*#about {
+	text-align: center;
+}*/
+.menu  li::after{
+	left: 5px;
+	top:5px;
+	counter-increment: li;
+	content: counter(li);
+    font: italic bold 1em serif, georgia;
+    position: absolute;
+    color: rgba(255,255,255,.1);
+    opacity: 0;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+.menu li:hover::after {
+  opacity: 1;
+  font-size: 5em;
+} 
+
+.menu .cover {
+	z-index:2;
+}
+.menu .cover::after{
+	z-index: -1;
+}
+.menu li .expanded {
+	display: block;
+	opacity: .95;
+	height: 440px;
+	width: 560px;
+	padding: 40px;
+	overflow: visible;
+	cursor: default;
+}
+.menu li:first-child .expanded,
+.menu li:nth-child(2) .expanded ,
+.menu li:nth-child(3) .expanded{
+	margin-top: -140px;
+}
+.menu li:nth-child(4) .expanded,
+.menu li:nth-child(5) .expanded ,
+.menu li:nth-child(6) .expanded
+{
+ 	margin-top: -290px;
+}
+.menu li:nth-child(7) .expanded,
+.menu li:nth-child(8) .expanded ,
+.menu li:nth-child(9) .expanded
+{
+ 	margin-top: -440px;
+}
+.menu li:nth-child(3n) .expanded{ /* 3,6,9 */
+  margin-left: -380px
+}
+
+.menu li:nth-child(3n+2) .expanded{ /* 2,5,8 */
+   	margin-left: -190px;
+}
+
+.menu .close {
+  display: none;
+  border: 5px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  height: 30px; width: 30px;
+  font: bold 15px/30px arial, helvetica;
+  position: absolute;
+  text-align: center;
+  top: -17px; right: -17px;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  border-radius: 40px;      
+}
+
+.menu .cover .close{
+  display: block;
+  z-index: 2;
+  outline: none;
+}
+
+.menu .cover:focus{
+  outline: 0;
+}

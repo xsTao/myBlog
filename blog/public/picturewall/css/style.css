@@ -1,0 +1,56 @@
+body {
+	background: url(../images/pinstripe.gif) repeat top left ;
+	margin: 40px;
+	padding: 20px;
+	font-family: Georgia,"Times New Roman";
+}
+header h1 {
+	font-size: 6em;
+	margin: 10px;
+}
+header span {
+	font:12px;
+	margin: 55px;
+}
+.iw_wrapper {
+	position: relative;
+	margin: 20px 10%;
+}
+.iw_thumbs {
+	overflow: hidden;
+}
+.iw_thumbs li {
+	float: left;
+	list-style: none;
+	margin: 5px;
+	cursor: pointer;
+}
+.iw_thumbs  li img {
+	border: 7px solid #fff;
+	box-shadow: 1px 1px 1px  #aaa;
+}
+.iw_thumbs li:nth-child(even) img{
+	height:40px;
+	margin-left: 30px;
+
+}
+.iw_thumbs li:nth-child(odd) img{
+	height:60px;
+	margin-left: 40px;
+	margin-top: 30px;
+}
+.iw_thumbs li:nth-child(5n) img{
+	height: 80px;
+	/*margin-left: 50px;*/
+	margin-top:40px;
+}
+.w_thumbs li:nth-child(7n) img{
+	height: 40px;
+	margin-right: 50px;
+}
+.iw_thumbs li div {
+	display: none;
+}
+.iw_ribbon {
+	display: none;
+}
