@@ -56,3 +56,6 @@ body {
 .back-top:hover {
 	background: #aaa;
 }
+#container {
+	position:relative;
+}
