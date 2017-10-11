@@ -1,0 +1,6 @@
+转载：
+	<% if (post.reprint_info && post.reprint_info.reprint_to) { %>
+		<%= post.reprint_info.reprint_to.length %>
+	<% } else { %>
+		<%= 0 %>
+	<% } %>
