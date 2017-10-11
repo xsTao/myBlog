@@ -59,16 +59,16 @@ router.get('/', function(req, res) {
 
 
 
-//router.get('/reg', checkNotLogin);
-//router.get('/reg', function(req, res) {
-//	res.render('reg', {
-//		title: '注册',
-//		user: req.session.user,
-//		url: req.url,
-//		success: req.flash('success').toString(),
-//		error: req.flash('error').toString()
-//	});
-//});
+router.get('/reg', checkNotLogin);
+router.get('/reg', function(req, res) {
+	res.render('reg', {
+		title: '注册',
+		user: req.session.user,
+		url: req.url,
+		success: req.flash('success').toString(),
+		error: req.flash('error').toString()
+	});
+});
 
 router.post('/reg', checkNotLogin);
 router.post('/reg', function(req, res) {

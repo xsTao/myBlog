@@ -2,7 +2,7 @@
 	<h3>阅读排行</h3>
 	<ul class="list-unstyled">
 		<% docs.forEach(function(doc){ %>
-			<a href="/p/<%= doc._id %>" title="<%- doc.title %>"><li class="title">
+			<a href="/p/<%= doc._id %>" title="<%- doc.title %>" class="list-group-item list-group-item-info" ><li class="title">
 			<% if(doc.title.length >20){ %> 
 				<%- doc.title.substring(0,20) %>...
 			<% }else{ %> 
