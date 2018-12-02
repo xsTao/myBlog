@@ -1,7 +1,7 @@
-#node 博客系统
+# node 博客系统
 
 =====
-##个人搭建的博客，技术栈
+## 个人搭建的博客，技术栈
 
 ```
 ·Express
@@ -10,7 +10,7 @@
 ·NodeJs
 ```
 -----------
-###使用
+### 使用
 
 ```
 1. git clone https://github.com/xsTao/myBlog.git
